@@ -66,7 +66,6 @@ const HomeHeroSlider = () => {
           src={`/assets/images/home/hero02${mobileSuffix}.png`}
           fill
           sizes="100vw"
-          priority
           style={{
             objectFit: 'cover',
           }}
@@ -78,7 +77,6 @@ const HomeHeroSlider = () => {
           src={`/assets/images/home/hero03${mobileSuffix}.png`}
           fill
           sizes="100vw"
-          priority
           style={{
             objectFit: 'cover',
           }}
