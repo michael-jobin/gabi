@@ -12,7 +12,7 @@ const Menu = () => {
         className={`${styles.hamburger} ${open ? styles.isActive : ''}`}
         onClick={handleMenu}
         id="hamburger"
-        aria-name="open/close the menu"
+        aria-label="open/close the menu"
       >
         <span className={styles.hamburgerBox}>
           <span className={styles.hamburgerInner}></span>
