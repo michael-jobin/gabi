@@ -24,16 +24,16 @@ export const metadata: Metadata = {
     description,
     images: [ogImageUrl],
   },
-  robots: {
-    index: false,
-    follow: false,
-    nocache: true,
-    googleBot: {
-      index: false,
-      follow: false,
-      noimageindex: true,
-    },
-  },
+  // robots: {
+  //   index: false,
+  //   follow: false,
+  //   nocache: true,
+  //   googleBot: {
+  //     index: false,
+  //     follow: false,
+  //     noimageindex: true,
+  //   },
+  // },
   openGraph: {
     title,
     description,
