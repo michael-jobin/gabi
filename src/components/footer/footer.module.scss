@@ -1,0 +1,57 @@
+.footer {
+  padding: 2rem 4.5rem;
+  background: #bfbfbf;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @media screen and (max-width: 768px) {
+    padding: 2.2rem 1rem 1.8rem;
+    flex-wrap: wrap;
+  }
+}
+.small1 {
+  letter-spacing: 0.1em;
+  text-align: center;
+  color: #fff;
+  font-size: 1rem;
+  line-height: 1.8rem;
+  @media screen and (max-width: 768px) {
+    order: 2;
+    margin-top: 1.5rem;
+    line-height: 1.5;
+  }
+  small {
+    font-size: 1rem;
+    font-weight: 400;
+    @media screen and (max-width: 768px) {
+      font-size: 0.9rem;
+      letter-spacing: 0;
+    }
+  }
+}
+.small2 {
+  font-weight: normal;
+  text-align: right;
+  color: #fff;
+  font-size: 1.4rem;
+  small {
+    letter-spacing: 0.03em;
+    font-size: 1.4rem;
+    @media screen and (max-width: 768px) {
+      font-size: 1.1rem;
+    }
+  }
+}
+.sns {
+  ul {
+    display: flex;
+    align-items: center;
+    li {
+      a {
+        svg {
+          fill: #fff;
+        }
+      }
+    }
+  }
+}

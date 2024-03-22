@@ -1,0 +1,18 @@
+.header {
+  position: absolute;
+  z-index: 10;
+  left: 3.3rem;
+  top: 3.6rem;
+  width: 6.5rem;
+  @media screen and (max-width: 768px) {
+    width: 4.2rem;
+    top: 1rem;
+    left: 1.3rem;
+  }
+  path {
+    fill: #f88154;
+    &:last-child {
+      fill: black;
+    }
+  }
+}

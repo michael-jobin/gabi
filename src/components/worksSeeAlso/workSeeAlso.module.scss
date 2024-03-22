@@ -1,0 +1,98 @@
+.section {
+  @media screen and (max-width: 768px) {
+    padding: 0rem 1.5rem 5rem;
+  }
+}
+.inner {
+  max-width: 95rem;
+  margin: auto;
+}
+.title {
+  font-size: 2.2rem;
+  color: #bfbfbf;
+  font-weight: 900;
+  margin-bottom: 1.7rem;
+  @media screen and (max-width: 768px) {
+    font-size: 1.6rem;
+    margin-bottom: 1.2rem;
+  }
+}
+
+.itemGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3.1rem;
+  @media screen and (max-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.9rem;
+  }
+}
+.item {
+  position: relative;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  @media (min-width: 768px) {
+    border-radius: 0.8rem;
+    &:hover {
+      .imageContainer::after {
+        opacity: 0.9;
+      }
+      .textContainer {
+        opacity: 1;
+      }
+    }
+  }
+  @media screen and (max-width: 768px) {
+    &:last-child {
+      display: none;
+    }
+  }
+}
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 21.4rem;
+  @media screen and (max-width: 768px) {
+    height: 10.9rem;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1.5rem;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border-radius: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+  }
+}
+.textContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out 0.1s;
+  h2 {
+    font-size: 2rem;
+    letter-spacing: 0.03em;
+    line-height: 2.8rem;
+    text-align: center;
+    font-weight: 900;
+  }
+  p {
+    font-size: 1.6rem;
+    letter-spacing: 0.03em;
+    line-height: 2.8rem;
+    text-align: center;
+  }
+}

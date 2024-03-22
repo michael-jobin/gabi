@@ -1,0 +1,19 @@
+.sns {
+  text-align: center;
+  li {
+    display: inline-block;
+    margin: 0 1rem;
+    @media screen and (max-width: 768px) {
+      margin: 0 0.5rem;
+    }
+    a {
+      svg {
+        width: 2.8rem;
+        fill: #bfbebe;
+        @media screen and (max-width: 768px) {
+          width: 2.4rem;
+        }
+      }
+    }
+  }
+}

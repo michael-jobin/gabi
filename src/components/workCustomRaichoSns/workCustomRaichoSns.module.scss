@@ -1,0 +1,50 @@
+.section {
+  padding: 0 0 7.5rem;
+  margin-top: -6.4em;
+  @media screen and (max-width: 768px) {
+    padding: 0 0 2rem;
+    margin-top: -2em;
+  }
+}
+.linkList {
+  display: flex;
+  justify-content: flex-end;
+  width: 85%;
+  margin: auto;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  li {
+    margin-left: 3.5rem;
+    @media screen and (max-width: 768px) {
+      margin: 0 0 0.5rem 0;
+    }
+  }
+  a {
+    display: flex;
+    align-items: center;
+    text-decoration: underline;
+    font-size: 1.5rem;
+    letter-spacing: 0.03em;
+    color: #f88154;
+    font-weight: 900;
+    @media screen and (max-width: 768px) {
+      font-size: 1rem;
+    }
+    svg {
+      width: 3.5rem;
+      fill: #bfbebe;
+      margin-right: 1.2rem;
+      @media screen and (max-width: 768px) {
+        width: 1.5rem;
+      }
+    }
+  }
+}
+.x {
+  width: 3.8rem;
+  @media screen and (max-width: 768px) {
+    width: 2.5rem;
+  }
+}

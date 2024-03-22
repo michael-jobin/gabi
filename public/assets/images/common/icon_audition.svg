@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 43.87 39.97">
+  <defs>
+    <style>
+      .cls-1 {
+        clip-path: url(#clippath);
+      }
+
+      .cls-2 {
+        fill: none;
+      }
+
+      .cls-2, .cls-3, .cls-4 {
+        stroke-width: 0px;
+      }
+
+      .cls-3 {
+        fill: #bababd;
+      }
+
+      .cls-5 {
+        clip-path: url(#clippath-1);
+      }
+
+      .cls-6 {
+        clip-path: url(#clippath-2);
+      }
+
+      .cls-4 {
+        fill: #fff;
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="cls-2" width="43.87" height="39.97"/>
+    </clipPath>
+    <clipPath id="clippath-1">
+      <rect class="cls-2" width="43.87" height="39.97"/>
+    </clipPath>
+    <clipPath id="clippath-2">
+      <rect class="cls-2" x="24.47" y="15.2" width="13.26" height="14.49"/>
+    </clipPath>
+  </defs>
+  <g id="_レイヤー_6" data-name="レイヤー 6">
+    <g id="Group_541" data-name="Group 541">
+      <g class="cls-1">
+        <g id="Group_482" data-name="Group 482">
+          <g id="Group_481" data-name="Group 481">
+            <path id="Path_289" data-name="Path 289" class="cls-3" d="M40.1,39.97H3.77c-2.07,0-3.76-1.66-3.77-3.73h0V3.73C0,1.66,1.7-.01,3.77,0h36.33c2.07,0,3.76,1.66,3.77,3.73h0v32.5c0,2.07-1.7,3.74-3.77,3.73"/>
+          </g>
+        </g>
+      </g>
+      <g class="cls-5">
+        <g id="Group_485" data-name="Group 485">
+          <g id="Group_488" data-name="Group 488">
+            <g class="cls-6">
+              <g id="Group_489" data-name="Group 489">
+                <g id="Group_488-2" data-name="Group 488-2">
+                  <path id="Path_295" data-name="Path 295" class="cls-4" d="M31.4,29.1c.72-.42,1.36-.97,1.89-1.61h.11l.34,1.87h3.98v-14.15h-4.89v9.11c-.23.38-.54.71-.91.96-.35.2-.74.3-1.14.28-.41.03-.8-.14-1.07-.45-.3-.55-.42-1.19-.36-1.81v-8.1h-4.89v8.72c-.08,1.48.29,2.94,1.05,4.21.77,1.08,2.06,1.68,3.39,1.57.87.02,1.73-.18,2.49-.59"/>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+      <path id="Path_294" data-name="Path 294" class="cls-4" d="M23.73,29.19l-7.39-20.34h-3.85l-7.39,20.34h5.22l1-3.05h6.25l.94,3.05h5.22ZM16.25,21.98h-3.54l1.83-5.42,1.71,5.42Z"/>
+    </g>
+  </g>
+</svg>

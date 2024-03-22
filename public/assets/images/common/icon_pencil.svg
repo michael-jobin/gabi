@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 43.47 41.91">
+  <defs>
+    <style>
+      .cls-1 {
+        clip-path: url(#clippath);
+      }
+
+      .cls-2, .cls-3, .cls-4 {
+        stroke-width: 0px;
+      }
+
+      .cls-2, .cls-5 {
+        fill: none;
+      }
+
+      .cls-3 {
+        fill: #bababd;
+      }
+
+      .cls-5 {
+        stroke: #fff;
+        stroke-width: .64px;
+      }
+
+      .cls-4 {
+        fill: #fff;
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="cls-2" x="9.09" width="25.29" height="41.91"/>
+    </clipPath>
+  </defs>
+  <g id="_レイヤー_6" data-name="レイヤー 6">
+    <g>
+      <path id="Path_22" data-name="Path 22" class="cls-2" d="M39.74,40.94H3.73c-2.06,0-3.73-1.67-3.73-3.73h0V4.7C0,2.64,1.67.97,3.73.97h36.01c2.06,0,3.73,1.67,3.73,3.73v32.5c0,2.06-1.67,3.73-3.73,3.74h0"/>
+      <g id="Group_556" data-name="Group 556">
+        <g id="Group_100" data-name="Group 100">
+          <path id="Path_28" data-name="Path 28" class="cls-4" d="M21.7,25.34h.03-.02s0,0,0,0Z"/>
+        </g>
+        <g id="Group_101" data-name="Group 101">
+          <path id="Path_29" data-name="Path 29" class="cls-3" d="M17.07,9.87l-7.52,13.55v17.69h24.36v-17.73S21.74,1.45,21.74,1.45l-4.67,8.42ZM21.71,25.32h.03s-.04.01-.04.01h.01Z"/>
+        </g>
+        <g class="cls-1">
+          <g id="Group_103" data-name="Group 103">
+            <g id="Group_102" data-name="Group 102">
+              <path id="Path_30" data-name="Path 30" class="cls-5" d="M21.68,41.49h12.14v-18.04S21.74,1.12,21.74,1.12l-4.63,8.57-7.45,13.79v18.01h12.02ZM17.11,9.69h8.93M9.66,23.48l4.95-2.75,7.11,4.68M33.76,23.48l-4.95-2.75-7.11,4.68v.02h-.03v16.06M28.79,21.11v20.8M14.6,20.73v20.76"/>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

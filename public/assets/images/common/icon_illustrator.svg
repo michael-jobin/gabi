@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 43.48 39.97">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: #bababd;
+      }
+
+      .cls-3 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="_レイヤー_6" data-name="レイヤー 6">
+    <g>
+      <path id="Path_22" data-name="Path 22" class="cls-2" d="M39.74,39.97H3.73C1.67,39.97,0,38.3,0,36.23H0V3.73C0,1.67,1.67,0,3.73,0h36.01c2.06,0,3.73,1.67,3.73,3.73v32.5c0,2.06-1.67,3.73-3.73,3.74h0"/>
+      <path id="Path_23" data-name="Path 23" class="cls-1" d="M0,39.97h43.47V0H0v39.97Z"/>
+      <path id="Path_24" data-name="Path 24" class="cls-3" d="M26.72,30.24l-7.39-20.34h-3.85l-7.39,20.34h5.22l1-3.05h6.25l.94,3.05h5.22ZM19.25,23.02h-3.54l1.83-5.42,1.71,5.42ZM33.74,9.73h-4.68v3.56h4.68v-3.56ZM33.74,13.29v2.2h-4.68v14.75h4.68V13.29Z"/>
+    </g>
+  </g>
+</svg>

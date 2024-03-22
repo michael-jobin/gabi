@@ -1,0 +1,323 @@
+// ----------------------------------------
+// typography
+// ----------------------------------------
+@font-face {
+  font-family: 'lineSeedJP';
+  src: url('/assets/fonts/WOFF2/LINESeedJP_OTF_Th.woff2') format('woff2'),
+    url('/assets/fonts/WOFF/LINESeedJP_OTF_Th.woff2') format('woff');
+  font-weight: 200;
+}
+@font-face {
+  font-family: 'lineSeedJP';
+  src: url('/assets/fonts/WOFF2/LINESeedJP_OTF_Rg.woff2') format('woff2'),
+    url('/assets/fonts/WOFF/LINESeedJP_OTF_Rg.woff2') format('woff');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'lineSeedJP';
+  src: url('/assets/fonts/WOFF2/LINESeedJP_OTF_Bd.woff2') format('woff2'),
+    url('/assets/fonts/WOFF/LINESeedJP_OTF_Bd.woff2') format('woff');
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'lineSeedJP';
+  src: url('/assets/fonts/WOFF2/LINESeedJP_OTF_Eb.woff2') format('woff2'),
+    url('/assets/fonts/WOFF/LINESeedJP_OTF_Eb.woff2') format('woff');
+  font-weight: 900;
+}
+// ----------------------------------------
+// reset
+// ----------------------------------------
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  font-weight: normal;
+  vertical-align: baseline;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+div {
+  line-height: inherit;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+ol,
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  appearance: none;
+  border: none;
+}
+// ----------------------------------------
+// GENERAL
+// ----------------------------------------
+html {
+  font-size: 62.5%;
+  @media screen and (max-width: 1440px) {
+    font-size: 0.695vw;
+  }
+  @media screen and (max-width: 768px) {
+    font-size: 2.66667vw;
+  }
+}
+@keyframes headerFadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+body {
+  color: black;
+  font-size: 16px;
+  font-size: 1.6rem;
+  font-family: 'lineSeedJP', sans-serif;
+  letter-spacing: 0.05em;
+  line-height: 26px;
+  font-weight: 400;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  &.scrolled {
+    #toTopButton {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    #menu,
+    #hamburger,
+    #header {
+      position: fixed;
+    }
+    #hamburger,
+    #header,
+    #headerBackground {
+      animation: headerFadeInDown 0.5s ease-out forwards;
+    }
+  }
+}
+#headerBackground {
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
+  background-color: rgba($color: white, $alpha: 0.6);
+  backdrop-filter: blur(7px);
+  width: 100%;
+  height: 6rem;
+  z-index: 9;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.14);
+  @media screen and (min-width: 769px) {
+    display: none;
+  }
+}
+.dark {
+  #header svg path:last-child {
+    fill: white;
+  }
+  .caption {
+    color: white;
+  }
+}
+.main {
+  position: relative;
+}
+
+.pc {
+  display: block;
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}
+.sp {
+  display: none;
+  @media screen and (max-width: 768px) {
+    display: block;
+  }
+}
+// ----------------------------------------
+// specific pages
+// ----------------------------------------
+#major-arcana-animaux-royaux-collection {
+  height: 62.4rem;
+  .worksSlider_container {
+    @media screen and (max-width: 768px) {
+      height: 27rem;
+    }
+  }
+}
+// ----------------------------------------
+// swiper
+// ----------------------------------------
+@keyframes paginationscale {
+  from {
+    transform-origin: left;
+    transform: scaleX(0);
+  }
+  to {
+    transform-origin: left;
+    transform: scaleX(1);
+  }
+}
+swiper-container::part(pagination) {
+  bottom: 1.7rem;
+  @media screen and (max-width: 768px) {
+    bottom: 7.2rem;
+  }
+}
+swiper-container::part(bullet),
+swiper-container::part(bullet-active) {
+  width: 5rem;
+  height: 0.3rem;
+  border-radius: 0.4rem;
+  opacity: 1;
+  margin: 0 0.6rem;
+  background-color: rgba($color: white, $alpha: 0.5);
+  @media screen and (max-width: 768px) {
+    width: 3.4rem;
+    margin: 0 0.4rem;
+  }
+  &::before {
+    content: '';
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 0.4rem;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+  }
+}
+swiper-container::part(bullet) {
+  &::before {
+    transform: scaleX(0);
+  }
+}
+swiper-container::part(bullet-active) {
+  &::before {
+    animation-name: paginationscale;
+  }
+}

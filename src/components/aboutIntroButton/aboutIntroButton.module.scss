@@ -1,0 +1,16 @@
+.container {
+  margin-top: 3.2rem;
+  @media screen and (max-width: 768px) {
+    margin-top: 2.4rem;
+  }
+  button {
+    font-size: 1.5rem;
+    letter-spacing: 0.01em;
+    line-height: 5.5rem;
+    color: #f88154;
+    @media screen and (max-width: 768px) {
+      font-size: 1.4rem;
+      line-height: 4.5rem;
+    }
+  }
+}

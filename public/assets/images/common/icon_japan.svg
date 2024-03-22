@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 58.97 38.64">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #f4f4f4;
+      }
+
+      .cls-1, .cls-2 {
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: #ff6767;
+      }
+    </style>
+  </defs>
+  <g id="_レイヤー_6" data-name="レイヤー 6">
+    <g id="Group_582" data-name="Group 582">
+      <rect id="Rectangle_278-2-2" data-name="Rectangle 278-2-2" class="cls-1" width="58.97" height="38.64"/>
+      <circle id="Ellipse_59" data-name="Ellipse 59" class="cls-2" cx="29.49" cy="19.32" r="10.17"/>
+    </g>
+  </g>
+</svg>

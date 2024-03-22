@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 43.47 40.92">
+  <defs>
+    <style>
+      .cls-1 {
+        clip-path: url(#clippath);
+      }
+
+      .cls-2, .cls-3 {
+        stroke-width: 0px;
+      }
+
+      .cls-2, .cls-4 {
+        fill: none;
+      }
+
+      .cls-3 {
+        fill: #bababd;
+      }
+
+      .cls-4 {
+        stroke: #fff;
+        stroke-width: .64px;
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="cls-2" x="11.34" width="20.8" height="40.92"/>
+    </clipPath>
+  </defs>
+  <g id="_レイヤー_6" data-name="レイヤー 6">
+    <g>
+      <path id="Path_22" data-name="Path 22" class="cls-2" d="M39.74,40.45H3.73c-2.06,0-3.73-1.67-3.73-3.73h0V4.21C0,2.15,1.67.48,3.73.48h36.01c2.06,0,3.73,1.67,3.73,3.73v32.5c0,2.06-1.67,3.73-3.73,3.74h0"/>
+      <g id="pen_icon" data-name="pen icon">
+        <g id="Group_601" data-name="Group 601">
+          <path id="Path_323" data-name="Path 323" class="cls-3" d="M22.63.16h-3.31v4.72h4.69V.16h-1.38Z"/>
+        </g>
+        <g id="Group_602" data-name="Group 602">
+          <path id="Path_324" data-name="Path 324" class="cls-3" d="M21.56,4.88h3.61l1.68,16.61h-10.35l1.67-16.61h3.4Z"/>
+        </g>
+        <g class="cls-1">
+          <g id="Group_606" data-name="Group 606">
+            <g id="Group_603" data-name="Group 603">
+              <path id="Path_325" data-name="Path 325" class="cls-3" d="M28.78,21.49v5.29c-4.72-.62-9.5-.63-14.22-.01v-5.27h14.22Z"/>
+            </g>
+            <g id="Group_604" data-name="Group 604">
+              <path id="Path_326" data-name="Path 326" class="cls-3" d="M14.55,26.76c4.72-.61,9.51-.61,14.23.02.89.04,1.75.3,2.51.76.76.98-.14,12.57-.14,12.57H12.1s-.58-10.9.21-12.39c.23-.42,1.05-.73,2.24-.96"/>
+            </g>
+            <g id="Group_605" data-name="Group 605">
+              <path id="Path_327" data-name="Path 327" class="cls-4" d="M14.45,26.88c-1.21.23-2.04.55-2.27.98-.8,1.53-.21,12.64-.21,12.64h19.3s.92-11.83.15-12.83c-.77-.47-1.64-.74-2.54-.78-4.79-.64-9.63-.64-14.42-.02ZM14.45,27.1v-5.59h7.11M28.87,27.1v-5.59h-7.32M16.42,21.51l1.69-16.94h1.17M26.92,21.51l-1.7-16.94h-1.18M22.64.42h1.4v4.15h-4.76V.42h1.25"/>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

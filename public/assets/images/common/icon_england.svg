@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 59.71 39.12">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ff6767;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: #406bcc;
+      }
+
+      .cls-3 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="_レイヤー_6" data-name="レイヤー 6">
+    <g id="unionjack">
+      <rect id="Rectangle_278-2-3" data-name="Rectangle 278-2-3" class="cls-2" width="59.71" height="39.12"/>
+      <path id="Path_338" data-name="Path 338" class="cls-3" d="M7.53,39.12L59.71,4.67V0h-6.88L0,34.62v4.5h7.53Z"/>
+      <path id="Path_339" data-name="Path 339" class="cls-3" d="M52.18,39.12L0,4.67V0h6.88l52.82,34.62v4.5h-7.53Z"/>
+      <path id="Path_340" data-name="Path 340" class="cls-1" d="M0,39.12l25.73-16.72,2.05,1.9-23.14,14.82H0Z"/>
+      <path id="Path_341" data-name="Path 341" class="cls-1" d="M59.7,0l-25.22,16.72-2.05-1.9L55.07,0h4.63Z"/>
+      <path id="Path_342" data-name="Path 342" class="cls-1" d="M34.74,22.99l24.96,16.13v-3.13s-23.23-15.08-23.23-15.08l-1.73,2.08Z"/>
+      <path id="Path_343" data-name="Path 343" class="cls-1" d="M24.96,16.4L0,.27v2.96s23.23,15.26,23.23,15.26l1.73-2.08Z"/>
+      <rect id="Rectangle_321" data-name="Rectangle 321" class="cls-3" x="23.23" y="0" width="13.25" height="39.12"/>
+      <rect id="Rectangle_322" data-name="Rectangle 322" class="cls-3" x="0" y="12.93" width="59.69" height="13.25"/>
+      <rect id="Rectangle_323" data-name="Rectangle 323" class="cls-1" x="25.89" y="0" width="7.93" height="39.12"/>
+      <rect id="Rectangle_324" data-name="Rectangle 324" class="cls-1" x="0" y="15.59" width="59.69" height="7.93"/>
+    </g>
+  </g>
+</svg>
