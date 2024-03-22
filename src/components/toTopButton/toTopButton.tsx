@@ -42,6 +42,7 @@ const ToTopButton = () => {
     >
       <button onClick={handleClick}>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 34">
+          <title>go to the top</title>
           <circle className={styles.cls2} cx="17" cy="17" r="17" />
           <path
             className={styles.cls1}
