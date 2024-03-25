@@ -16,7 +16,6 @@ const ScrollButton = () => {
     <div className={styles.button} ref={container}>
       <button onClick={handleClick}>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 54">
-          <title>scroll</title>
           <circle className={styles.cls3} cx="27" cy="27" r="27" />
           <path className={styles.cls1} d="M33.38,32.69l-6.33,7.28-6.56-7.28" />
           <path
@@ -44,6 +43,7 @@ const ScrollButton = () => {
             d="M25.6,22.63c.38-.17.7-.46.92-.82.21-.36.32-.78.31-1.2,0-.43-.1-.85-.31-1.21-.22-.36-.54-.64-.92-.82-.48-.21-1-.31-1.52-.29h-.87s-1.72,0-1.72,0v7.11h1.72v-2.47h.52l1.53,2.47h2.01l-1.87-2.7c.07-.02.14-.03.2-.06ZM23.21,19.74h.75c.2,0,.41.03.59.11.16.07.29.18.38.32.09.15.14.32.13.5,0,.18-.04.35-.13.5-.09.14-.22.25-.38.32-.19.08-.39.11-.59.11h-.75v-1.85Z"
           />
         </svg>
+        scroll
       </button>
     </div>
   )

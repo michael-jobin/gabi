@@ -16,6 +16,7 @@ const HomeHeroSlider = () => {
   // slider logic
   useEffect(() => {
     const video = videoRef.current
+    if (isMobile && video) video.load()
     function onSwiperSlideChange(event: CustomEvent<[e: Swiper]>) {
       const realIndex = event.detail[0].realIndex
       if (realIndex === 2 && video) {
@@ -50,10 +51,9 @@ const HomeHeroSlider = () => {
     >
       <swiper-slide key="1" class={styles.slide}>
         <Image
-          alt="aboutImage"
+          alt="EDITORIAL AND PRINT"
           src={`/assets/images/home/hero01${mobileSuffix}.png`}
           fill
-          priority
           sizes="100vw"
           style={{
             objectFit: 'cover',
@@ -62,7 +62,7 @@ const HomeHeroSlider = () => {
       </swiper-slide>
       <swiper-slide key="2" class={styles.slide}>
         <Image
-          alt="aboutImage"
+          alt="MASCOTS AND CHARACTERS DESIGN"
           src={`/assets/images/home/hero02${mobileSuffix}.png`}
           fill
           sizes="100vw"
@@ -73,7 +73,7 @@ const HomeHeroSlider = () => {
       </swiper-slide>
       <swiper-slide key="3" class={styles.slide}>
         <Image
-          alt="aboutImage"
+          alt="ANALOGUE ILLUSTRATION"
           src={`/assets/images/home/hero03${mobileSuffix}.png`}
           fill
           sizes="100vw"
@@ -87,7 +87,7 @@ const HomeHeroSlider = () => {
           ref={videoRef}
           muted
           playsInline
-          preload="auto"
+          preload="none"
           loop
           poster={`/assets/images/home/hero04${mobileSuffix}.png`}
         >
