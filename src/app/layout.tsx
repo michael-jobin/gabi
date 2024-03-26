@@ -63,6 +63,7 @@ const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
           <ToTopButton />
         </div>
         <Footer />
+        <Analytics />
       </body>
     </html>
   )
