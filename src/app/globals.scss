@@ -1,7 +1,8 @@
+@charset 'UTF-8';
 // ----------------------------------------
 // typography
 // ----------------------------------------
-@font-face {
+/* @font-face {
   font-family: 'lineSeedJP';
   src: url('/assets/fonts/WOFF2/LINESeedJP_OTF_Th.woff2') format('woff2'),
     url('/assets/fonts/WOFF/LINESeedJP_OTF_Th.woff2') format('woff');
@@ -24,7 +25,11 @@
   src: url('/assets/fonts/WOFF2/LINESeedJP_OTF_Eb.woff2') format('woff2'),
     url('/assets/fonts/WOFF/LINESeedJP_OTF_Eb.woff2') format('woff');
   font-weight: 900;
-}
+} */
+@import '/public/assets/fonts/LINESeedJP_OTF/LINESeedJP_OTF_Th/LINESeedJP_OTF_Th';
+@import '/public/assets/fonts/LINESeedJP_OTF/LINESeedJP_OTF_Rg/LINESeedJP_OTF_Rg';
+@import '/public/assets/fonts/LINESeedJP_OTF/LINESeedJP_OTF_Bd/LINESeedJP_OTF_Bd';
+@import '/public/assets/fonts/LINESeedJP_OTF/LINESeedJP_OTF_Eb/LINESeedJP_OTF_Eb';
 // ----------------------------------------
 // reset
 // ----------------------------------------
