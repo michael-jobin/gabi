@@ -17,6 +17,7 @@ import wacom from '/public/assets/images/common/icon_wacom.svg'
 import pencil from '/public/assets/images/common/icon_pencil.svg'
 import pen from '/public/assets/images/common/icon_pen.svg'
 import brush from '/public/assets/images/common/icon_brush.svg'
+import Age from '../Age'
 
 // data
 const career = [
@@ -84,18 +85,6 @@ const exhibitions = [
 ]
 
 const AboutProfile = () => {
-  const getAge = (birthDate: string) => {
-    const today = new Date()
-    const birth = new Date(birthDate)
-    let age = today.getFullYear() - birth.getFullYear()
-    const m = today.getMonth() - birth.getMonth()
-    if (m < 0 || (m === 0 && today.getDate() < birth.getDate())) {
-      age--
-    }
-    return age
-  }
-  const age = getAge('1994-06-09')
-
   return (
     <section className={styles.section} id="aboutProfile">
       <div className={styles.inner}>
@@ -116,7 +105,9 @@ const AboutProfile = () => {
               </tr>
               <tr>
                 <th>Age</th>
-                <td>{age} years old</td>
+                <td>
+                  <Age /> years old
+                </td>
               </tr>
               <tr>
                 <th>Born in</th>
