@@ -6,17 +6,17 @@ import styles from './page.module.scss'
 import WorkSeeAlso from '@/components/worksSeeAlso/workSeeAlso'
 import Image from 'next/image'
 
-// get the page slug
 type Props = {
-  params: { slug: string }
-  searchParams: { [key: string]: string | string[] | undefined }
+  params: Promise<{ slug: string }>
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>
 }
 
 export async function generateMetadata(
-  { params }: Props,
+  { params, searchParams }: Props,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
-  const { slug: id } = await params // Await the params here
+  const { slug: id } = await params
+  const search = await searchParams // Await searchParams if required
   return {
     title: `Gabi Brewer｜${id}`,
     description: `${id}`,
@@ -30,9 +30,10 @@ interface Work {
   backgroundImage?: string
 }
 
-const Page: React.FC<Props> = async ({ params }) => {
-  // Make the component async
-  const { slug } = await params // Await params here
+const Page: React.FC<Props> = async ({ params, searchParams }) => {
+  const { slug } = await params // Await params
+  const search = await searchParams // Await searchParams if used
+
   const thisPageWork = works.find((e) => e.slug === slug)
 
   if (!thisPageWork) {

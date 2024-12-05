@@ -287,13 +287,13 @@ body {
     transform: scaleX(1);
   }
 }
-.swiper-pagination {
-  bottom: 1.7rem;
-  @media screen and (max-width: 768px) {
-    bottom: 7.2rem;
+.main .swiper {
+  .swiper-pagination {
+    bottom: 1.7rem;
+    @media screen and (max-width: 768px) {
+      bottom: 7.2rem;
+    }
   }
-}
-.swiper {
   .swiper-pagination-bullet,
   .swiper-pagination-bullet-active {
     width: 5rem;
