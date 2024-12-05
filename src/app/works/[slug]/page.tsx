@@ -11,11 +11,12 @@ type Props = {
   params: { slug: string }
   searchParams: { [key: string]: string | string[] | undefined }
 }
+
 export async function generateMetadata(
   { params }: Props,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
-  const id = params.slug
+  const { slug: id } = await params // Await the params here
   return {
     title: `Gabi Brewer｜${id}`,
     description: `${id}`,
@@ -29,8 +30,9 @@ interface Work {
   backgroundImage?: string
 }
 
-const Page: React.FC<Props> = ({ params }) => {
-  const { slug } = params
+const Page: React.FC<Props> = async ({ params }) => {
+  // Make the component async
+  const { slug } = await params // Await params here
   const thisPageWork = works.find((e) => e.slug === slug)
 
   if (!thisPageWork) {

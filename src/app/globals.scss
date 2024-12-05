@@ -287,42 +287,44 @@ body {
     transform: scaleX(1);
   }
 }
-swiper-container::part(pagination) {
+.swiper-pagination {
   bottom: 1.7rem;
   @media screen and (max-width: 768px) {
     bottom: 7.2rem;
   }
 }
-swiper-container::part(bullet),
-swiper-container::part(bullet-active) {
-  width: 5rem;
-  height: 0.3rem;
-  border-radius: 0.4rem;
-  opacity: 1;
-  margin: 0 0.6rem;
-  background-color: rgba($color: white, $alpha: 0.5);
-  @media screen and (max-width: 768px) {
-    width: 3.4rem;
-    margin: 0 0.4rem;
-  }
-  &::before {
-    content: '';
-    background-color: white;
-    width: 100%;
-    height: 100%;
-    display: block;
+.swiper {
+  .swiper-pagination-bullet,
+  .swiper-pagination-bullet-active {
+    width: 5rem;
+    height: 0.3rem;
     border-radius: 0.4rem;
-    animation-duration: 10s;
-    animation-timing-function: linear;
+    opacity: 1;
+    margin: 0 0.6rem;
+    background-color: rgba($color: white, $alpha: 0.5);
+    @media screen and (max-width: 768px) {
+      width: 3.4rem;
+      margin: 0 0.4rem;
+    }
+    &::before {
+      content: '';
+      background-color: white;
+      width: 100%;
+      height: 100%;
+      display: block;
+      border-radius: 0.4rem;
+      animation-duration: 10s;
+      animation-timing-function: linear;
+    }
   }
-}
-swiper-container::part(bullet) {
-  &::before {
-    transform: scaleX(0);
+  .swiper-pagination-bullet {
+    &::before {
+      transform: scaleX(0);
+    }
   }
-}
-swiper-container::part(bullet-active) {
-  &::before {
-    animation-name: paginationscale;
+  .swiper-pagination-bullet-active {
+    &::before {
+      animation-name: paginationscale;
+    }
   }
 }

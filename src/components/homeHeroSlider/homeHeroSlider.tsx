@@ -3,53 +3,48 @@ import { useEffect, useRef } from 'react'
 import styles from './homeHeroSlider.module.scss'
 import Image from 'next/image'
 import { useMediaQuery } from 'react-responsive'
-import { register, SwiperContainer } from 'swiper/element/bundle'
-import type { Swiper } from 'swiper'
-register()
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Autoplay, Pagination } from 'swiper/modules'
+import 'swiper/css'
+import 'swiper/css/pagination'
 
 const HomeHeroSlider = () => {
-  const swiperElRef = useRef<SwiperContainer>(null)
+  const swiperElRef = useRef(null)
   const videoRef = useRef<HTMLVideoElement>(null)
   const isMobile = useMediaQuery({ query: '(max-width: 768px)' })
   const mobileSuffix = isMobile ? '_sp' : ''
 
-  // slider logic
+  const handleRealIndexChange = (swiper: any) => {
+    const video = videoRef.current
+    const realIndex = swiper.realIndex
+
+    if (realIndex === 2 && video) {
+      if (video.readyState !== 4) video.load()
+    }
+    if (realIndex === 3 && video) {
+      if (video.readyState !== 4) video.load()
+      video.currentTime = 0
+      video.play()
+    }
+  }
+
   useEffect(() => {
     const video = videoRef.current
     if (isMobile && video) video.load()
-    function onSwiperSlideChange(event: CustomEvent<[e: Swiper]>) {
-      const realIndex = event.detail[0].realIndex
-      if (realIndex === 2 && video) {
-        if (video.readyState !== 4) video.load()
-      }
-      if (realIndex === 3 && video) {
-        if (video.readyState !== 4) video.load()
-        video.currentTime = 0
-        video.play()
-      }
-    }
-
-    const swiper = swiperElRef.current
-    // @ts-ignore
-    swiper?.addEventListener('swiperrealindexchange', onSwiperSlideChange)
-    return () => {
-      // @ts-ignore
-      swiper?.removeEventListener('swiperrealindexchange', onSwiperSlideChange)
-    }
-  }, [])
+  }, [isMobile])
 
   return (
-    <swiper-container
-      class={styles.slider}
+    <Swiper
+      modules={[Pagination, Autoplay]}
+      className={styles.slider}
       ref={swiperElRef}
-      pagination="true"
-      pagination-clickable="true"
-      speed="500"
-      loop="true"
-      autoplay-delay="7000"
-      autoplay-disable-on-interaction="false"
+      pagination={{ clickable: true }}
+      speed={500}
+      loop={true}
+      autoplay={{ delay: 7000, disableOnInteraction: false }}
+      onRealIndexChange={handleRealIndexChange}
     >
-      <swiper-slide key="1" class={styles.slide}>
+      <SwiperSlide key="1" className={styles.slide}>
         <Image
           alt="EDITORIAL AND PRINT"
           src={`/assets/images/home/hero01${mobileSuffix}.png`}
@@ -59,8 +54,8 @@ const HomeHeroSlider = () => {
             objectFit: 'cover',
           }}
         />
-      </swiper-slide>
-      <swiper-slide key="2" class={styles.slide}>
+      </SwiperSlide>
+      <SwiperSlide key="2" className={styles.slide}>
         <Image
           alt="MASCOTS AND CHARACTERS DESIGN"
           src={`/assets/images/home/hero02${mobileSuffix}.png`}
@@ -70,8 +65,8 @@ const HomeHeroSlider = () => {
             objectFit: 'cover',
           }}
         />
-      </swiper-slide>
-      <swiper-slide key="3" class={styles.slide}>
+      </SwiperSlide>
+      <SwiperSlide key="3" className={styles.slide}>
         <Image
           alt="ANALOGUE ILLUSTRATION"
           src={`/assets/images/home/hero03${mobileSuffix}.png`}
@@ -81,8 +76,8 @@ const HomeHeroSlider = () => {
             objectFit: 'cover',
           }}
         />
-      </swiper-slide>
-      <swiper-slide key="4" class={styles.slide}>
+      </SwiperSlide>
+      <SwiperSlide key="4" className={styles.slide}>
         <video
           ref={videoRef}
           muted
@@ -93,8 +88,8 @@ const HomeHeroSlider = () => {
         >
           <source src={`/assets/video/tofesta${mobileSuffix}.mp4`} type="video/mp4" />
         </video>
-      </swiper-slide>
-    </swiper-container>
+      </SwiperSlide>
+    </Swiper>
   )
 }
 

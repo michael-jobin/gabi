@@ -43,6 +43,9 @@ const WorksGallery: React.FC<WorksInfoProps> = ({ work }) => {
           border: item.frame ? '1.8rem solid #fff' : 'none',
           boxShadow: item.boxShadow ? '0px 3px 6px rgba(0, 0, 0, 0.2)' : 'none',
         }
+
+        const isGif = item.src?.endsWith('.gif')
+
         return (
           <div key={index} className={styles.item}>
             {item.type === 'image' && (
@@ -54,6 +57,7 @@ const WorksGallery: React.FC<WorksInfoProps> = ({ work }) => {
                 style={style}
                 className={item.margin ? styles.customMargin : ''}
                 sizes="(max-width: 768px) 100vw, 1000px"
+                {...(isGif && { unoptimized: true })}
                 {...(index === 0 && { priority: true })}
               />
             )}
