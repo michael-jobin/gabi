@@ -1,39 +1,46 @@
-import { works } from '@/data/worksList'
 import styles from './workSeeAlso.module.scss'
 import Image from 'next/image'
 import Link from 'next/link'
+import { SanityImageSource } from '@sanity/image-url/lib/types/types'
+import imageUrlBuilder from '@sanity/image-url'
+import { client } from '@/sanity/client'
+import { type Work } from '@/app/types'
 
-interface Work {
-  slug: string
-}
+const { projectId, dataset } = client.config()
+const urlFor = (source: SanityImageSource) =>
+  projectId && dataset ? imageUrlBuilder({ projectId, dataset }).image(source).url() : null
 
 interface WorksInfoProps {
-  work: Work
+  slug: string
+  allWorks: Work[]
 }
-const WorkSeeAlso: React.FC<WorksInfoProps> = ({ work }) => {
-  const otherworks = works.filter((e) => e.slug !== work.slug)
-  const randomWorks = otherworks.sort(() => Math.random() - 0.5).slice(0, 4)
+
+const WorkSeeAlso: React.FC<WorksInfoProps> = ({ slug, allWorks }) => {
+  const randomWorks = allWorks
+    .filter((e) => e.slug.current !== slug)
+    .sort(() => Math.random() - 0.5)
+    .slice(0, 4)
 
   return (
     <section className={styles.section}>
       <div className={styles.inner}>
         <h2 className={styles.title}>See Also</h2>
         <div className={styles.itemGrid}>
-          {randomWorks.map((work, index) => (
+          {randomWorks.map((item, index) => (
             <article key={index} className={styles.item}>
-              <Link href={`/works/${work.slug}`}>
+              <Link href={`/works/${item.slug.current}`}>
                 <div className={styles.imageContainer}>
                   <Image
-                    src={`/assets/images/home/${work.thumbnail}`}
-                    alt={work.title}
+                    src={item.thumbnail ? urlFor(item.thumbnail) || '' : ''}
+                    alt={item.title}
                     fill
                     sizes="(max-width: 768px) 100vw, 236px"
                   />
                 </div>
                 <div className={styles.textContainer}>
-                  <h2>{work.title}</h2>
+                  <h2>{item.title}</h2>
                   <p>
-                    <time>{work.date}</time>
+                    <time>{item.date}</time>
                   </p>
                 </div>
               </Link>

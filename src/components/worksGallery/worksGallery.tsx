@@ -5,29 +5,15 @@ import WorksSlider from '../worksSlider/worksSlider'
 import WorkCustomSoap from '../workCustomSoap/workCustomSoap'
 import WorkCustomSoapSns from '../workCustomSoapSns/workCustomSoapSns'
 import WorkCustomRaichoSns from '../workCustomRaichoSns/workCustomRaichoSns'
+import { SanityImageSource } from '@sanity/image-url/lib/types/types'
+import imageUrlBuilder from '@sanity/image-url'
+import { getImageDimensions } from '@sanity/asset-utils'
+import { client } from '@/sanity/client'
+import { type Work } from '@/app/types'
 
-interface InfoItem {
-  type: string
-  src?: string
-  caption?: string
-  width?: number
-  height?: number
-  mixBlendMode?: string
-  id?: string
-  thumbnail?: string
-  slides?: Array<String>
-  slideCaption1?: Array<String>
-  slideCaption2?: Array<String>
-  margin?: string
-  frame?: boolean
-  boxShadow?: boolean
-}
-
-interface Work {
-  gallery?: Array<InfoItem>
-  title: string
-  slug: string
-}
+const { projectId, dataset } = client.config()
+const urlFor = (source: SanityImageSource) =>
+  projectId && dataset ? imageUrlBuilder({ projectId, dataset }).image(source).url() : null
 
 interface WorksInfoProps {
   work: Work
@@ -37,51 +23,86 @@ const WorksGallery: React.FC<WorksInfoProps> = ({ work }) => {
   return (
     <div className={styles.gallery}>
       {work.gallery?.map((item, index) => {
-        const style: React.CSSProperties = {
-          mixBlendMode: item.mixBlendMode as React.CSSProperties['mixBlendMode'],
-          margin: item.margin as React.CSSProperties['margin'],
-          border: item.frame ? '1.8rem solid #fff' : 'none',
-          boxShadow: item.boxShadow ? '0px 3px 6px rgba(0, 0, 0, 0.2)' : 'none',
-        }
+        if (item.galleryType === 'image' && item.galleryImage) {
+          const style: React.CSSProperties = {
+            mixBlendMode: item.galleryMultiply ? 'multiply' : 'normal',
+            margin: item.galleryMargin as React.CSSProperties['margin'],
+            border: item.galleryFrame ? '1.8rem solid #fff' : 'none',
+            boxShadow: item.galleryBoxShadow ? '0px 3px 6px rgba(0, 0, 0, 0.2)' : 'none',
+          }
 
-        const isGif = item.src?.endsWith('.gif')
+          const imageUrl = urlFor(item.galleryImage) || ''
+          const { width, height } = getImageDimensions(imageUrl)
+          const isGif = imageUrl.endsWith('.gif')
 
-        return (
-          <div key={index} className={styles.item}>
-            {item.type === 'image' && (
+          return (
+            <div key={index} className={styles.item}>
               <Image
                 alt={work.title}
-                src={`/assets/images/works/${work.slug}/${item.src}`}
-                width={item.width}
-                height={item.height}
+                src={imageUrl}
+                width={width}
+                height={height}
                 style={style}
-                className={item.margin ? styles.customMargin : ''}
                 sizes="(max-width: 768px) 100vw, 1000px"
-                {...(isGif && { unoptimized: true })}
-                {...(index === 0 && { priority: true })}
+                priority={index === 0}
+                unoptimized={isGif}
               />
-            )}
-            {item.type === 'video' && item.id && (
+            </div>
+          )
+        }
+
+        if (item.galleryType === 'video' && item.galleryId) {
+          const imageUrl = item.galleryThumbnail ? urlFor(item.galleryThumbnail) : ''
+          return (
+            <div key={index} className={styles.item}>
               <WorksVideo
-                id={item.id}
-                thumbnail={item.thumbnail}
-                caption={item.caption}
-                slug={work.slug}
+                id={item.galleryId}
+                thumbnail={imageUrl}
+                caption={item.galleryCaption}
+                slug={work.slug.current}
               />
-            )}
-            {item.type === 'slider' && item.slides && (
+            </div>
+          )
+        }
+
+        if (item.galleryType === 'slider' && item.slider) {
+          return (
+            <div key={index} className={styles.item}>
               <WorksSlider
-                slides={item.slides}
-                caption1={item.slideCaption1}
-                caption2={item.slideCaption2}
-                slug={work.slug}
+                slides={item.slider.slides.map((slide) => urlFor(slide) || '')}
+                caption1={item.slider.slideCaption1}
+                caption2={item.slider.slideCaption2}
+                slug={work.slug.current}
               />
-            )}
-            {item.type === 'custom-soap' && <WorkCustomSoap />}
-            {item.type === 'custom-soap-sns' && <WorkCustomSoapSns />}
-            {item.type === 'custom-raicho-sns' && <WorkCustomRaichoSns />}
-          </div>
-        )
+            </div>
+          )
+        }
+
+        if (item.galleryType === 'custom' && item.galleryCustom === 'custom-soap') {
+          return (
+            <div key={index} className={styles.item}>
+              <WorkCustomSoap />
+            </div>
+          )
+        }
+
+        if (item.galleryType === 'custom' && item.galleryCustom === 'custom-soap-sns') {
+          return (
+            <div key={index} className={styles.item}>
+              <WorkCustomSoapSns />
+            </div>
+          )
+        }
+
+        if (item.galleryType === 'custom' && item.galleryCustom === 'custom-raicho-sns') {
+          return (
+            <div key={index} className={styles.item}>
+              <WorkCustomRaichoSns />
+            </div>
+          )
+        }
+
+        return null
       })}
     </div>
   )

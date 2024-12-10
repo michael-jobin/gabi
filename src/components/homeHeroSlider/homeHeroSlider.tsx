@@ -7,8 +7,20 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, Pagination } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/pagination'
+import { SanityImageSource } from '@sanity/image-url/lib/types/types'
+import imageUrlBuilder from '@sanity/image-url'
+import { client } from '@/sanity/client'
+import { type MvElement } from '@/app/types'
 
-const HomeHeroSlider = () => {
+interface HomeHeroSliderProps {
+  mv: MvElement[]
+}
+
+const { projectId, dataset } = client.config()
+const urlFor = (source: SanityImageSource) =>
+  projectId && dataset ? imageUrlBuilder({ projectId, dataset }).image(source).url() : null
+
+const HomeHeroSlider: React.FC<HomeHeroSliderProps> = ({ mv }) => {
   const swiperElRef = useRef(null)
   const videoRef = useRef<HTMLVideoElement>(null)
   const isMobile = useMediaQuery({ query: '(max-width: 768px)' })
@@ -18,10 +30,10 @@ const HomeHeroSlider = () => {
     const video = videoRef.current
     const realIndex = swiper.realIndex
 
-    if (realIndex === 2 && video) {
+    if (realIndex === mv.length - 1 && video) {
       if (video.readyState !== 4) video.load()
     }
-    if (realIndex === 3 && video) {
+    if (realIndex === mv.length && video) {
       if (video.readyState !== 4) video.load()
       video.currentTime = 0
       video.play()
@@ -44,7 +56,24 @@ const HomeHeroSlider = () => {
       autoplay={{ delay: 7000, disableOnInteraction: false }}
       onRealIndexChange={handleRealIndexChange}
     >
-      <SwiperSlide key="1" className={styles.slide}>
+      {mv?.map((slide, index) => {
+        const imageUrl = isMobile ? urlFor(slide.mvImageSp) : urlFor(slide.mvImagePc)
+        return (
+          <SwiperSlide key={`mv-${index}`} className={styles.slide}>
+            <Image
+              alt={`Slide ${index + 1}`}
+              src={imageUrl || '/path/to/default-image.jpg'} // Fallback to a default image
+              fill
+              sizes="100vw"
+              style={{
+                objectFit: 'cover',
+              }}
+            />
+          </SwiperSlide>
+        )
+      })}
+
+      {/* <SwiperSlide key="1" className={styles.slide}>
         <Image
           alt="EDITORIAL AND PRINT"
           src={`/assets/images/home/hero01${mobileSuffix}.png`}
@@ -76,7 +105,8 @@ const HomeHeroSlider = () => {
             objectFit: 'cover',
           }}
         />
-      </SwiperSlide>
+      </SwiperSlide> */}
+
       <SwiperSlide key="4" className={styles.slide}>
         <video
           ref={videoRef}

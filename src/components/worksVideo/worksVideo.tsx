@@ -77,12 +77,7 @@ const WorksVideo: React.FC<WorksVideoProps> = ({ id, thumbnail, caption, slug })
         </div>
         {thumbnail && (
           <div className={styles.thumbnail}>
-            <Image
-              alt="thumbnail"
-              src={`/assets/images/works/${slug}/${thumbnail}`}
-              sizes="(max-width: 768px) 100vw, 1000px"
-              fill
-            />
+            <Image alt="thumbnail" src={thumbnail} sizes="(max-width: 768px) 100vw, 1000px" fill />
           </div>
         )}
       </div>

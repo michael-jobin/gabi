@@ -2,15 +2,27 @@ import type { Metadata } from 'next'
 import AboutIntro from '@/components/aboutIntro/aboutIntro'
 import AboutProfile from '@/components/aboutProfile/aboutProfile'
 import styles from './page.module.scss'
-export const metadata: Metadata = {
-  title: 'about | Gabi Brewer',
-  description:
-    'My name is Gabriela Brewer, but please call me Gabi :) I am an Argentinian Graphic Designer & Illustrator based in Tokyo, currently working as a freelancer. ブルーワー・ガブリエラと申しますが、ガビで呼んでね！東京でフリーランサーとして活躍しているアルゼンチン出身のグラフィックデザイナー＆イラストレーターです。',
+import { client } from '@/sanity/client'
+
+export const generateMetadata = async (): Promise<Metadata> => {
+  const aboutData = await client.fetch<{ title: string; description: string }>(
+    `*[_type == "about"]{ title, description }[0]`
+  )
+  return {
+    title: aboutData?.title || 'About | Gabi Brewer',
+    description: aboutData?.description || '',
+  }
 }
-const Page = () => {
+
+const Page = async () => {
+  const { introduction, introductionJp } = await client.fetch<{
+    introduction: any[]
+    introductionJp: any[]
+  }>(`*[_type == "about"]{ introduction,introductionJp }[0]`)
+
   return (
     <main className={styles.main}>
-      <AboutIntro />
+      <AboutIntro introduction={introduction} introductionJp={introductionJp} />
       <AboutProfile />
     </main>
   )
