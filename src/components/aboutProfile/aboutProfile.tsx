@@ -1,5 +1,6 @@
 import styles from './aboutProfile.module.scss'
 import Image from 'next/image'
+import { type AboutProfileProps } from '@/app/types'
 
 //images
 import profileImage from '/public/assets/images/about/aboutProfile_img01.png'
@@ -19,48 +20,6 @@ import pen from '/public/assets/images/common/icon_pen.svg'
 import brush from '/public/assets/images/common/icon_brush.svg'
 import Age from '../Age'
 
-// data
-const career = [
-  {
-    year: '2012 / 03',
-    position: 'Graphic Design University Entry',
-    place: 'Universidad Blas Pascal',
-    flag: 'argentina',
-  },
-  {
-    year: '2015 / 02',
-    position: 'One year Study International Exchange',
-    place: 'Kansai Gaidai University',
-    flag: 'japan',
-  },
-  {
-    year: '2017 / 05',
-    position: 'Graphic Design Bachelor University Graduation',
-    place: 'Universidad Blas Pascal',
-    flag: 'argentina',
-  },
-  {
-    year: '2018 / 02',
-    position: 'Graphic Designer & Illustrator Position',
-    place: 'At Queserser&Co / Osaka',
-    flag: 'japan',
-  },
-  {
-    year: '2020 / 03',
-    position: 'Graphic Designer & Illustrator Position',
-    place: 'At Sherpa&Co / Tokyo',
-  },
-  {
-    year: '2023 / 06',
-    position: 'Graphic Designer & Illustrator Position',
-    place: 'At PACkage / Osaka',
-  },
-  {
-    year: '2024 / 02',
-    position: 'Freelancer',
-    place: 'Tokyo',
-  },
-]
 const exhibitions = [
   {
     year: '2017 / 08',
@@ -84,7 +43,7 @@ const exhibitions = [
   },
 ]
 
-const AboutProfile = () => {
+const AboutProfile: React.FC<AboutProfileProps> = ({ hobbies, career }) => {
   return (
     <section className={styles.section} id="aboutProfile">
       <div className={styles.inner}>
@@ -138,7 +97,7 @@ const AboutProfile = () => {
               <div className={styles.step} key={index}>
                 {item.flag ? (
                   <Image
-                    src={`/assets/images/common/icon_${item.flag}.svg`}
+                    src={`/assets/images/common/icon_${item.flag.toLowerCase()}.svg`}
                     alt={item.flag}
                     width={38}
                     height={25}

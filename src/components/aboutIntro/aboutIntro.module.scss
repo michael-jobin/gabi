@@ -51,14 +51,15 @@
 }
 .english,
 .japanese {
+  font-size: 1.3rem;
+  letter-spacing: 0.03em;
+  line-height: 2rem;
+  @media screen and (max-width: 768px) {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+  }
   p {
-    font-size: 1.3rem;
-    letter-spacing: 0.03em;
-    line-height: 2rem;
-    @media screen and (max-width: 768px) {
-      font-size: 1.2rem;
-      line-height: 1.8rem;
-    }
+    min-height: 1rem;
   }
   strong {
     font-weight: 700;

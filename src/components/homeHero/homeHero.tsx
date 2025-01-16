@@ -13,7 +13,6 @@ const HomeHeroSlider = dynamic(() => import('@/components/homeHeroSlider/homeHer
 })
 
 const HomeHero: React.FC<HomeHeroProps> = ({ mv }) => {
-  console.log(mv)
   return (
     <section className={styles.section} id="topHero">
       <HomeHeroSlider mv={mv} />

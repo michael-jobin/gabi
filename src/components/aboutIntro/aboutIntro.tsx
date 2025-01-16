@@ -3,11 +3,7 @@ import Image from 'next/image'
 import img01 from '/public/assets/images/about/aboutIntro_img01.png'
 import AboutIntroButton from '../aboutIntroButton/aboutIntroButton'
 import { PortableText } from '@portabletext/react'
-
-interface AboutIntroProps {
-  introduction: any[]
-  introductionJp: any[]
-}
+import { type AboutIntroProps } from '@/app/types'
 
 const AboutIntro: React.FC<AboutIntroProps> = ({ introduction, introductionJp }) => {
   return (

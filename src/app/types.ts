@@ -12,6 +12,31 @@ export interface HomePageData {
  mv: MvElement[]
 }
 
+//about page
+export interface CareerItem {
+ year: string;
+ position: string;
+ place: string;
+ flag?: string;
+}
+
+export interface AboutInfo {
+ introduction: any[];
+ introductionJp: any[];
+ hobbies: string;
+ career: CareerItem[];
+}
+
+export interface AboutIntroProps {
+ introduction: any[];
+ introductionJp: any[];
+}
+
+export interface AboutProfileProps {
+ hobbies: string;
+ career: CareerItem[];
+}
+
 //works page 
 export interface InfoItem {
  col1Title?: string
