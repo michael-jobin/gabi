@@ -20,30 +20,30 @@ import pen from '/public/assets/images/common/icon_pen.svg'
 import brush from '/public/assets/images/common/icon_brush.svg'
 import Age from '../Age'
 
-const exhibitions = [
-  {
-    year: '2017 / 08',
-    title: '"Monsterpedia" Book Release & Sales',
-    place: 'Cordoba',
-  },
-  {
-    year: '2018 / 08',
-    title: '"Unknown Asia" Art Event Exhibition',
-    place: 'Osaka',
-  },
-  {
-    year: '2018 / 10',
-    title: 'Kobe PortTower Art Exhibition',
-    place: 'Hyogo',
-  },
-  {
-    year: '2019 / 01',
-    title: 'Tomo Gallery Solo Exhibition',
-    place: 'Kyoto',
-  },
-]
+// const exhibitions = [
+//   {
+//     year: '2017 / 08',
+//     title: '"Monsterpedia" Book Release & Sales',
+//     place: 'Cordoba',
+//   },
+//   {
+//     year: '2018 / 08',
+//     title: '"Unknown Asia" Art Event Exhibition',
+//     place: 'Osaka',
+//   },
+//   {
+//     year: '2018 / 10',
+//     title: 'Kobe PortTower Art Exhibition',
+//     place: 'Hyogo',
+//   },
+//   {
+//     year: '2019 / 01',
+//     title: 'Tomo Gallery Solo Exhibition',
+//     place: 'Kyoto',
+//   },
+// ]
 
-const AboutProfile: React.FC<AboutProfileProps> = ({ hobbies, career }) => {
+const AboutProfile: React.FC<AboutProfileProps> = ({ exhibitions, career, hobbies }) => {
   return (
     <section className={styles.section} id="aboutProfile">
       <div className={styles.inner}>
@@ -82,10 +82,7 @@ const AboutProfile: React.FC<AboutProfileProps> = ({ hobbies, career }) => {
               </tr>
               <tr>
                 <th>Hobbies</th>
-                <td>
-                  Travelling, running, drawing, collecting illustrated books, Nintendo games,
-                  endlessly redesigning my portfolio, memes
-                </td>
+                <td>{hobbies}</td>
               </tr>
             </tbody>
           </table>
@@ -141,7 +138,7 @@ const AboutProfile: React.FC<AboutProfileProps> = ({ hobbies, career }) => {
             <div className={styles.exhibition} key={index}>
               <p className={styles.year}>{item.year}</p>
               <p className={styles.position}>{item.title}</p>
-              <p className={styles.place}>{item.place}</p>
+              <p className={styles.place}>{item.city}</p>
             </div>
           ))}
         </div>

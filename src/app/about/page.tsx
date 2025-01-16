@@ -16,14 +16,15 @@ export const generateMetadata = async (): Promise<Metadata> => {
 }
 
 const Page = async () => {
-  const { introduction, introductionJp, hobbies, career } = await client.fetch<AboutInfo>(
-    `*[_type == "about"]{ introduction,introductionJp, hobbies, career }[0]`
-  )
+  const { introduction, introductionJp, hobbies, career, exhibitions } =
+    await client.fetch<AboutInfo>(
+      `*[_type == "about"]{ introduction,introductionJp, hobbies, career, exhibitions }[0]`
+    )
 
   return (
     <main className={styles.main}>
       <AboutIntro introduction={introduction} introductionJp={introductionJp} />
-      <AboutProfile hobbies={hobbies} career={career} />
+      <AboutProfile hobbies={hobbies} career={career} exhibitions={exhibitions} />
     </main>
   )
 }

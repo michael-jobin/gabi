@@ -20,11 +20,18 @@ export interface CareerItem {
  flag?: string;
 }
 
+export interface ExhibitionsItem {
+ year: string;
+ title: string;
+ city: string;
+}
+
 export interface AboutInfo {
  introduction: any[];
  introductionJp: any[];
  hobbies: string;
  career: CareerItem[];
+ exhibitions: ExhibitionsItem[];
 }
 
 export interface AboutIntroProps {
@@ -33,8 +40,9 @@ export interface AboutIntroProps {
 }
 
 export interface AboutProfileProps {
- hobbies: string;
+ exhibitions: ExhibitionsItem[];
  career: CareerItem[];
+ hobbies: string;
 }
 
 //works page 
