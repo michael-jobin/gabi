@@ -10,9 +10,9 @@ interface WorksInfoProps {
 
 const WorksInfo: React.FC<WorksInfoProps> = ({ work }) => {
   useEffect(() => {
-    if (work.backgroundContrast === 'dark') document.body.classList.add('dark')
+    if (work.darkBackground) document.body.classList.add('dark')
     return () => document.body.classList.remove('dark')
-  }, [work.backgroundContrast])
+  }, [work.darkBackground])
 
   // Render items for col1 with link distinction
   const renderCol1Item = (info: InfoItem, index: number) => {
@@ -57,9 +57,7 @@ const WorksInfo: React.FC<WorksInfoProps> = ({ work }) => {
   }
 
   return (
-    <section
-      className={`${styles.section} ${work.backgroundContrast === 'dark' ? styles.dark : ''}`}
-    >
+    <section className={`${styles.section} ${work.darkBackground ? styles.dark : ''}`}>
       <h1 className={styles.title}>{work.title}</h1>
       <div className={styles.container}>
         <div className={styles.col1}>

@@ -7,7 +7,7 @@ import { type Work, type HomePageData } from '@/app/types'
 const POSTS_QUERY = `*[
   _type == "works"
   && defined(slug.current)
-]|order(publishedAt desc){_id, title, slug, date, tags, thumbnail}`
+]|order(orderRank){_id, title, slug, date, tags, thumbnail}`
 
 export async function generateMetadata() {
   const homeData = await client.fetch<{ title: string; description: string }>(

@@ -89,7 +89,7 @@ export interface Work {
  col1?: Array<InfoItem>
  col2?: Array<InfoItem>
  backgroundColor?: { hex: string }
- backgroundContrast?: string
+ darkBackground: boolean
 
  gallery?: GalleryItem[]
 };
