@@ -9,6 +9,8 @@ const POSTS_QUERY = `*[
   && defined(slug.current)
 ]|order(orderRank){_id, title, slug, date, tags, thumbnail}`
 
+const options = { next: { revalidate: 30 } }
+
 export async function generateMetadata() {
   const homeData = await client.fetch<{ title: string; description: string }>(
     `*[_type == "home"]{ title, description }[0]`
@@ -21,8 +23,8 @@ export async function generateMetadata() {
 
 const Page = async () => {
   const [works, homeData] = await Promise.all([
-    client.fetch<Work[]>(POSTS_QUERY),
-    client.fetch<HomePageData>(`*[_type == "home"]{ tags, mv }[0]`),
+    client.fetch<Work[]>(POSTS_QUERY, {}, options),
+    client.fetch<HomePageData>(`*[_type == "home"]{ tags, mv }[0]`, {}, options),
   ])
   return (
     <main className={styles.main}>
