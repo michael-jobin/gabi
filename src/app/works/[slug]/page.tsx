@@ -48,7 +48,7 @@ const Page: React.FC<Props> = async ({ params, searchParams }) => {
     return <div>Work not found</div>
   }
 
-  const { title, background, backgroundImage } = work
+  const { title, backgroundColor, backgroundImage } = work
   const backgroundImageUrl = backgroundImage ? urlFor(backgroundImage)?.url() : null
 
   return (
@@ -58,7 +58,7 @@ const Page: React.FC<Props> = async ({ params, searchParams }) => {
         <WorksGallery work={work} />
         <WorkSeeAlso slug={work.slug.current} allWorks={allWorks} />
       </main>
-      <div className={styles.backgroundImage} style={{ background }}>
+      <div className={styles.backgroundImage} style={{ background: backgroundColor.hex }}>
         {backgroundImageUrl && <Image src={backgroundImageUrl} alt={title} fill sizes="100vw" />}
       </div>
     </>
