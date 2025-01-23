@@ -90,6 +90,6 @@ export interface Work {
  col2?: Array<InfoItem>
  backgroundColor?: { hex: string }
  darkBackground: boolean
-
+ backgroundImage: SanityImageSource
  gallery?: GalleryItem[]
 };

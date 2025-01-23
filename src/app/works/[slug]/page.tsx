@@ -7,6 +7,7 @@ import Image from 'next/image'
 import { client } from '@/sanity/client'
 import imageUrlBuilder from '@sanity/image-url'
 import type { SanityImageSource } from '@sanity/image-url/lib/types/types'
+import { type Work} from '@/app/types'
 
 const WORK_QUERY = `*[_type == "works" && slug.current == $slug][0]`
 const ALL_WORKS_QUERY = `*[_type == "works"]{
@@ -48,7 +49,7 @@ const Page: React.FC<Props> = async ({ params, searchParams }) => {
     return <div>Work not found</div>
   }
 
-  const { title, backgroundColor, backgroundImage } = work
+  const { title, backgroundColor, backgroundImage } = work as Work
   const backgroundImageUrl = backgroundImage ? urlFor(backgroundImage)?.url() : null
 
   return (
@@ -58,7 +59,7 @@ const Page: React.FC<Props> = async ({ params, searchParams }) => {
         <WorksGallery work={work} />
         <WorkSeeAlso slug={work.slug.current} allWorks={allWorks} />
       </main>
-      <div className={styles.backgroundImage} style={{ background: backgroundColor.hex }}>
+      <div className={styles.backgroundImage} style={{ background: backgroundColor?.hex || 'white' }}>
         {backgroundImageUrl && <Image src={backgroundImageUrl} alt={title} fill sizes="100vw" />}
       </div>
     </>
