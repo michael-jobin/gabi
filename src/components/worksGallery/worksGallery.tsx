@@ -26,7 +26,8 @@ const WorksGallery: React.FC<WorksInfoProps> = ({ work }) => {
         if (item.galleryType === 'image' && item.galleryImage) {
           const style: React.CSSProperties = {
             mixBlendMode: item.galleryMultiply ? 'multiply' : 'normal',
-            margin: item.galleryMargin as React.CSSProperties['margin'],
+            margin: item.galleryMargin || 'auto',
+            width: item.galleryWidth || '100%',
             border: item.galleryFrame ? '1.8rem solid #fff' : 'none',
             boxShadow: item.galleryBoxShadow ? '0px 3px 6px rgba(0, 0, 0, 0.2)' : 'none',
           }
@@ -46,6 +47,7 @@ const WorksGallery: React.FC<WorksInfoProps> = ({ work }) => {
                 sizes="(max-width: 768px) 100vw, 1000px"
                 priority={index === 0}
                 unoptimized={isGif}
+                className={ item.galleryMargin ? styles.customMargin : ''}
               />
             </div>
           )

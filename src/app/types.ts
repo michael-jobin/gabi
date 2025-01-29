@@ -69,6 +69,7 @@ export interface GalleryItem {
  galleryFrame?: boolean
  galleryBoxShadow?: boolean
  galleryMargin?: string
+ galleryWidth?: string
  slider?: {
   slides: SanityImageSource[]
   slideCaption1?: string[]
@@ -81,7 +82,7 @@ export interface Work {
  _id: string;
  title: string
  slug: { current: string }
- date: number
+ date: string
  tags: string[]
  thumbnail?: SanityImageSource
 
