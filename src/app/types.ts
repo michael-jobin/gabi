@@ -29,6 +29,7 @@ export interface ExhibitionsItem {
 export interface AboutInfo {
  introduction: any[];
  introductionJp: any[];
+ profilePic: SanityImageSource;
  hobbies: string;
  career: CareerItem[];
  exhibitions: ExhibitionsItem[];
@@ -43,6 +44,7 @@ export interface AboutProfileProps {
  exhibitions: ExhibitionsItem[];
  career: CareerItem[];
  hobbies: string;
+ profilePic: SanityImageSource;
 }
 
 //works page 
@@ -90,6 +92,7 @@ export interface Work {
  col1?: Array<InfoItem>
  col2?: Array<InfoItem>
  backgroundColor?: { hex: string }
+ backgroundColor2?: { hex: string }
  darkBackground: boolean
  backgroundImage: SanityImageSource
  gallery?: GalleryItem[]

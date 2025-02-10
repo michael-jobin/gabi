@@ -1,9 +1,16 @@
 import styles from './aboutProfile.module.scss'
 import Image from 'next/image'
 import { type AboutProfileProps } from '@/app/types'
+import { SanityImageSource } from '@sanity/image-url/lib/types/types'
+import imageUrlBuilder from '@sanity/image-url'
+import { getImageDimensions } from '@sanity/asset-utils'
+import { client } from '@/sanity/client'
+
+const { projectId, dataset } = client.config()
+const urlFor = (source: SanityImageSource) =>
+  projectId && dataset ? imageUrlBuilder({ projectId, dataset }).image(source).url() : null
 
 //images
-import profileImage from '/public/assets/images/about/aboutProfile_img01.png'
 import argentina from '/public/assets/images/common/icon_argentina.svg'
 import japan from '/public/assets/images/common/icon_japan.svg'
 import england from '/public/assets/images/common/icon_england.svg'
@@ -20,41 +27,23 @@ import pen from '/public/assets/images/common/icon_pen.svg'
 import brush from '/public/assets/images/common/icon_brush.svg'
 import Age from '../Age'
 
-// const exhibitions = [
-//   {
-//     year: '2017 / 08',
-//     title: '"Monsterpedia" Book Release & Sales',
-//     place: 'Cordoba',
-//   },
-//   {
-//     year: '2018 / 08',
-//     title: '"Unknown Asia" Art Event Exhibition',
-//     place: 'Osaka',
-//   },
-//   {
-//     year: '2018 / 10',
-//     title: 'Kobe PortTower Art Exhibition',
-//     place: 'Hyogo',
-//   },
-//   {
-//     year: '2019 / 01',
-//     title: 'Tomo Gallery Solo Exhibition',
-//     place: 'Kyoto',
-//   },
-// ]
+const AboutProfile: React.FC<AboutProfileProps> = ({ exhibitions, career, hobbies, profilePic }) => {
 
-const AboutProfile: React.FC<AboutProfileProps> = ({ exhibitions, career, hobbies }) => {
+  const profilePicUrl = urlFor(profilePic) || ''
+  const { width, height } = getImageDimensions(profilePicUrl)
+
   return (
     <section className={styles.section} id="aboutProfile">
       <div className={styles.inner}>
         <div className={styles.col1}>
           <h2 className={styles.title}>Profile</h2>
           <Image
-            src={profileImage}
+            src={profilePicUrl}
             alt="Gabi Brewer ガビ"
             sizes="(max-width: 768px) 100vw, 273px"
-            placeholder="blur"
             className={styles.profilePic}
+            width={width}
+            height={height}
           />
           <table className={styles.table}>
             <tbody>
@@ -122,7 +111,7 @@ const AboutProfile: React.FC<AboutProfileProps> = ({ exhibitions, career, hobbie
               <Image src={england} alt="england" />
               <p>
                 English
-                <span>Bussiness Level</span>
+                <span>Business Level</span>
               </p>
             </div>
             <div className={styles.icontext}>
