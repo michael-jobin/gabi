@@ -19,7 +19,7 @@
 .col1 {
   background-color: #f6f6f6;
   width: 28.1%;
-  padding: 10rem 6rem 3rem;
+  padding: 10rem 6rem 6rem;
   @media screen and (max-width: 768px) {
     padding: 5rem 6rem;
   }
@@ -30,8 +30,8 @@
   border-radius: 1.7rem;
 }
 .title {
-  font-weight: 900;
-  font-size: 1.8rem;
+  font-weight: 700;
+  font-size: 2rem;
   letter-spacing: 0.01em;
   line-height: 2.55rem;
   color: #f88154;
@@ -43,7 +43,7 @@
 }
 .title2 {
   font-weight: bold;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   letter-spacing: 0.01em;
   margin-bottom: 1.8rem;
   @media screen and (max-width: 768px) {
@@ -57,7 +57,7 @@
   }
   th,
   td {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     line-height: 2.8rem;
     letter-spacing: 0.01em;
     padding: 0.7rem 0;
@@ -80,7 +80,7 @@
 }
 //col2
 .col2 {
-  padding: 10rem 5rem 3rem;
+  padding: 10rem 5rem 6rem;
   width: 30.3%;
   @media screen and (max-width: 768px) {
     padding: 5rem 3rem;
@@ -93,7 +93,7 @@
   // }
 }
 .step {
-  padding-bottom: 2rem;
+  padding-bottom: 2.5rem;
   position: relative;
   &:after {
     content: '';
@@ -119,28 +119,27 @@
   padding-bottom: 2rem;
 }
 .year {
-  font-weight: 900;
-  font-size: 1.8rem;
+  font-weight: 700;
+  font-size: 1.5rem;
   letter-spacing: 0.01em;
   line-height: 1.5;
   color: #bfbfbf;
   @media screen and (max-width: 768px) {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
   }
 }
 .position {
-  font-weight: 700;
-  font-size: 1.6rem;
-  letter-spacing: 0.01em;
-  line-height: 2.3rem;
-}
-.place {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   letter-spacing: 0.01em;
   line-height: 2.3rem;
   @media screen and (max-width: 768px) {
     font-size: 1.4rem;
   }
+}
+.place {
+  font-size: 1.2rem;
+  letter-spacing: 0.01em;
+  line-height: 2.3rem;
 }
 .flag {
   position: absolute;
@@ -183,13 +182,13 @@
 .icontext2 {
   display: flex;
   align-items: center;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   letter-spacing: 0.01em;
   line-height: 2.1rem;
   margin-bottom: 2.3rem;
   @media screen and (max-width: 768px) {
     margin-bottom: 2rem;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
   }
   img {
     margin-right: 1.2rem;
@@ -199,13 +198,13 @@
   }
   span {
     display: block;
-    font-size: 1.3rem;
+    font-size: 1rem;
     color: #7e7e7e;
   }
 }
 //col4
 .col4 {
-  padding: 10rem 13rem 3rem 0rem;
+  padding: 10rem 13rem 6rem 0rem;
   width: 22.6%;
   @media screen and (max-width: 768px) {
     padding: 5rem 3rem;
