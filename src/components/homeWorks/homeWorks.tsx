@@ -19,6 +19,7 @@ type HomeWorksProps = {
 
 const HomeWorks: React.FC<HomeWorksProps> = ({ works, tags }) => {
   const [tag, setTag] = useState('ALL')
+
   const handleClick = (selectedTag: string) => {
     tag === selectedTag ? setTag('ALL') : setTag(selectedTag)
   }
@@ -45,7 +46,7 @@ const HomeWorks: React.FC<HomeWorksProps> = ({ works, tags }) => {
         </ul>
         <div className={styles.itemGrid}>
           {works
-            .filter((work) => tag === 'ALL' || work.tags.includes(tag))
+            .filter((work) => tag === 'ALL' || work.tags?.includes(tag))
             .map((work) => {
               const thumbnailUrl = work.thumbnail ? urlFor(work.thumbnail)?.url() : null
 
