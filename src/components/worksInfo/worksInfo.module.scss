@@ -1,85 +1,109 @@
 .section {
   max-width: 90rem;
   margin: auto;
+
   @media screen and (max-width: 768px) {
     padding: 0 1.5rem;
   }
 }
+
 .title {
   font-weight: 900;
   font-size: 1.8rem;
   letter-spacing: 0.03em;
   color: #f88154;
   margin-bottom: 2.5rem;
+
   @media screen and (max-width: 768px) {
     font-size: 1.6rem;
     margin-bottom: 0.2rem;
   }
 }
+
 .col1 {
   width: 53%;
   // background-color: aqua;
 }
+
 .col2 {
   width: 23%;
   // background-color: bisque;
 }
+
 .col3 {
   width: 15%;
   // background-color: chartreuse;
 }
+
 .container {
   display: flex;
   justify-content: space-between;
+
   @media screen and (max-width: 768px) {
     flex-direction: column;
+
     .col1,
     .col2,
     .col3 {
       width: 100%;
     }
   }
+
   div {
     font-size: 1.3rem;
     letter-spacing: 0.03em;
     line-height: 2.1rem;
+
     @media screen and (max-width: 768px) {
       font-size: 1.2rem;
     }
   }
+
   h2,
   p {
     display: inline;
   }
+
   h2 {
     font-weight: 900;
+
     @media screen and (max-width: 768px) {
       display: inline-block;
       margin-top: 0.3rem;
     }
   }
+
   a {
     color: #f88154;
     text-decoration: underline;
   }
 }
+
 .toolsList {
   margin-top: 0.8rem;
+
   @media screen and (max-width: 768px) {
     display: inline-block;
     margin: 0.5rem 0 0 0.6rem;
   }
+
   li {
     display: inline-block;
+    width: 2.7rem;
+
     @media screen and (max-width: 768px) {
       vertical-align: text-bottom;
+      width: 2.5rem;
     }
+
     &:not(:last-child) {
       margin-right: 0.6rem;
     }
   }
 }
+
 .dark {
+
   h2,
   p {
     color: white;

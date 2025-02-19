@@ -1,7 +1,7 @@
 import styles from './workCustomSoapSns.module.scss'
 import Image from 'next/image'
 import img01 from '/public/assets/images/works/botanical-illustration-series/customSns_img_01.png'
-import img02 from '/public/assets/images/works/botanical-illustration-series/customSns_img_02.png'
+import img02 from '/public/assets/images/works/botanical-illustration-series/customSns_img_02.gif'
 
 const WorkCustomSoapSns = () => {
   return (
@@ -20,7 +20,7 @@ const WorkCustomSoapSns = () => {
               @thecoldprocess.tokyo
             </a>
           </p>
-          <Image src={img02} alt="soap illustration" sizes="(max-width: 768px) 100vw, 430px" />
+          <Image src={img02} alt="soap illustration" sizes="(max-width: 768px) 100vw, 430px" unoptimized />
         </div>
       </div>
     </div>

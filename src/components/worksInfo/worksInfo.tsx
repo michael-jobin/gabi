@@ -75,8 +75,8 @@ const WorksInfo: React.FC<WorksInfoProps> = ({ work }) => {
                     <Image
                       src={`/assets/images/common/icon_${tool}.svg`}
                       alt={tool}
-                      width={25}
-                      height={25}
+                      width={43.48}
+                      height={39.97}
                     />
                   </li>
                 ))
