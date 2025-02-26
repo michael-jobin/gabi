@@ -60,8 +60,9 @@ const WorksGallery: React.FC<WorksInfoProps> = ({ work }) => {
               <WorksVideo
                 id={item.galleryId}
                 thumbnail={imageUrl}
+                title={item.galleryVideoTitle}
+                subtitle={item.galleryVideoSubtitle}
                 caption={item.galleryCaption}
-                slug={work.slug.current}
               />
             </div>
           )

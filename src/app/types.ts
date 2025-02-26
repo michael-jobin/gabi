@@ -66,6 +66,8 @@ export interface GalleryItem {
  galleryImage?: SanityImageSource
  galleryId?: string
  galleryThumbnail?: SanityImageSource
+ galleryVideoTitle?: string
+ galleryVideoSubtitle?: string
  galleryCaption?: string
  galleryMultiply?: boolean
  galleryFrame?: boolean

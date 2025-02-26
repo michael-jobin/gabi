@@ -11,12 +11,13 @@ declare global {
 }
 interface WorksVideoProps {
   id: string
-  slug: string
   thumbnail?: string | null
+  title?: string | null
+  subtitle?: string | null
   caption?: string | null
 }
 
-const WorksVideo: React.FC<WorksVideoProps> = ({ id, thumbnail, caption, slug }) => {
+const WorksVideo: React.FC<WorksVideoProps> = ({ id, thumbnail, title, subtitle, caption }) => {
   const playerRef = useRef<YT.Player | null>(null)
   const containerRef = useRef<HTMLDivElement | null>(null)
 
@@ -59,6 +60,12 @@ const WorksVideo: React.FC<WorksVideoProps> = ({ id, thumbnail, caption, slug })
 
   return (
     <div className={styles.section}>
+      {(title) &&
+        <p className={styles.title}>
+          <em>{title}</em>
+          {subtitle && <span>{subtitle}</span>}
+        </p>
+      }
       <div className={styles.container} ref={containerRef}>
         <iframe
           width="100%"
