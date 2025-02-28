@@ -18,7 +18,7 @@ const WorksSlider: React.FC<WorksSliderProps> = ({ slides, caption1, caption2, s
       <div className={`${styles.container} worksSlider_container`}>
         <Image
           alt="thumbnail"
-          src={`/assets/images/works/${slug}/${slides[sliderIndex]}`}
+          src={slides[sliderIndex].toString()}
           sizes="(max-width: 768px) 100vw, 758px"
           fill
         />

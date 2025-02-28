@@ -1,8 +1,16 @@
 import styles from './aboutProfile.module.scss'
 import Image from 'next/image'
+import { type AboutProfileProps } from '@/app/types'
+import { SanityImageSource } from '@sanity/image-url/lib/types/types'
+import imageUrlBuilder from '@sanity/image-url'
+import { getImageDimensions } from '@sanity/asset-utils'
+import { client } from '@/sanity/client'
+
+const { projectId, dataset } = client.config()
+const urlFor = (source: SanityImageSource) =>
+  projectId && dataset ? imageUrlBuilder({ projectId, dataset }).image(source).url() : null
 
 //images
-import profileImage from '/public/assets/images/about/aboutProfile_img01.png'
 import argentina from '/public/assets/images/common/icon_argentina.svg'
 import japan from '/public/assets/images/common/icon_japan.svg'
 import england from '/public/assets/images/common/icon_england.svg'
@@ -19,83 +27,23 @@ import pen from '/public/assets/images/common/icon_pen.svg'
 import brush from '/public/assets/images/common/icon_brush.svg'
 import Age from '../Age'
 
-// data
-const career = [
-  {
-    year: '2012 / 03',
-    position: 'Graphic Design University Entry',
-    place: 'Universidad Blas Pascal',
-    flag: 'argentina',
-  },
-  {
-    year: '2015 / 02',
-    position: 'One year Study International Exchange',
-    place: 'Kansai Gaidai University',
-    flag: 'japan',
-  },
-  {
-    year: '2017 / 05',
-    position: 'Graphic Design Bachelor University Graduation',
-    place: 'Universidad Blas Pascal',
-    flag: 'argentina',
-  },
-  {
-    year: '2018 / 02',
-    position: 'Graphic Designer & Illustrator Position',
-    place: 'At Queserser&Co / Osaka',
-    flag: 'japan',
-  },
-  {
-    year: '2020 / 03',
-    position: 'Graphic Designer & Illustrator Position',
-    place: 'At Sherpa&Co / Tokyo',
-  },
-  {
-    year: '2023 / 06',
-    position: 'Graphic Designer & Illustrator Position',
-    place: 'At PACkage / Osaka',
-  },
-  {
-    year: '2024 / 02',
-    position: 'Freelancer',
-    place: 'Tokyo',
-  },
-]
-const exhibitions = [
-  {
-    year: '2017 / 08',
-    title: '"Monsterpedia" Book Release & Sales',
-    place: 'Cordoba',
-  },
-  {
-    year: '2018 / 08',
-    title: '"Unknown Asia" Art Event Exhibition',
-    place: 'Osaka',
-  },
-  {
-    year: '2018 / 10',
-    title: 'Kobe PortTower Art Exhibition',
-    place: 'Hyogo',
-  },
-  {
-    year: '2019 / 01',
-    title: 'Tomo Gallery Solo Exhibition',
-    place: 'Kyoto',
-  },
-]
+const AboutProfile: React.FC<AboutProfileProps> = ({ exhibitions, career, hobbies, profilePic }) => {
 
-const AboutProfile = () => {
+  const profilePicUrl = urlFor(profilePic) || ''
+  const { width, height } = getImageDimensions(profilePicUrl)
+
   return (
     <section className={styles.section} id="aboutProfile">
       <div className={styles.inner}>
         <div className={styles.col1}>
           <h2 className={styles.title}>Profile</h2>
           <Image
-            src={profileImage}
+            src={profilePicUrl}
             alt="Gabi Brewer ガビ"
             sizes="(max-width: 768px) 100vw, 273px"
-            placeholder="blur"
             className={styles.profilePic}
+            width={width}
+            height={height}
           />
           <table className={styles.table}>
             <tbody>
@@ -123,10 +71,7 @@ const AboutProfile = () => {
               </tr>
               <tr>
                 <th>Hobbies</th>
-                <td>
-                  Travelling, running, drawing, collecting illustrated books, Nintendo games,
-                  endlessly redesigning my portfolio, memes
-                </td>
+                <td>{hobbies}</td>
               </tr>
             </tbody>
           </table>
@@ -138,7 +83,7 @@ const AboutProfile = () => {
               <div className={styles.step} key={index}>
                 {item.flag ? (
                   <Image
-                    src={`/assets/images/common/icon_${item.flag}.svg`}
+                    src={`/assets/images/common/icon_${item.flag.toLowerCase()}.svg`}
                     alt={item.flag}
                     width={38}
                     height={25}
@@ -166,7 +111,7 @@ const AboutProfile = () => {
               <Image src={england} alt="england" />
               <p>
                 English
-                <span>Bussiness Level</span>
+                <span>Business Level</span>
               </p>
             </div>
             <div className={styles.icontext}>
@@ -182,7 +127,7 @@ const AboutProfile = () => {
             <div className={styles.exhibition} key={index}>
               <p className={styles.year}>{item.year}</p>
               <p className={styles.position}>{item.title}</p>
-              <p className={styles.place}>{item.place}</p>
+              <p className={styles.place}>{item.city}</p>
             </div>
           ))}
         </div>

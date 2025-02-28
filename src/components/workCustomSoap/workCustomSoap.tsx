@@ -36,10 +36,10 @@ const WorkCustomSoap = () => {
       <div className={styles.container}>
         <div className={styles.col}>
           <div className={`${styles.picture} picture`}>
-            <Image alt="soap" src={img01} sizes="(max-width: 768px) 100vw, 430px" fill />
+            <Image alt="soap" src={img01} sizes="(max-width: 768px) 100vw, 430px" fill unoptimized />
           </div>
           <div className={`${styles.picture} picture`}>
-            <Image alt="soap" src={img02} sizes="(max-width: 768px) 100vw, 430px" fill />
+            <Image alt="soap" src={img02} sizes="(max-width: 768px) 100vw, 430px" fill unoptimized />
           </div>
         </div>
         <div className={styles.col}>
@@ -48,7 +48,7 @@ const WorkCustomSoap = () => {
             GIF animations made for social media.
           </p>
           <div className={`${styles.picture} picture`}>
-            <Image alt="soap" src={img03} sizes="(max-width: 768px) 100vw, 430px" fill />
+            <Image alt="soap" src={img03} sizes="(max-width: 768px) 100vw, 430px" fill unoptimized />
           </div>
         </div>
       </div>
