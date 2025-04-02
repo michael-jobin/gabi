@@ -304,6 +304,16 @@ body {
   }
 }
 
+#monsterpedia-mix-and-match-book-2nd-edition {
+  .worksSlider_container {
+    height: 60rem;
+
+    @media screen and (max-width: 768px) {
+      height: 27rem;
+    }
+  }
+}
+
 // ----------------------------------------
 // swiper
 // ----------------------------------------
