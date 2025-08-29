@@ -7,10 +7,12 @@ interface WorksSliderProps {
   slides: Array<String>
   caption1: Array<String> | undefined
   caption2: Array<String> | undefined
-  slug: string
+  //slug: string
+  width: number
+  height: number
 }
 
-const WorksSlider: React.FC<WorksSliderProps> = ({ slides, caption1, caption2, slug }) => {
+const WorksSlider: React.FC<WorksSliderProps> = ({ slides, caption1, caption2, width, height }) => {
   const [sliderIndex, setSliderIndex] = useState(0)
 
   return (
@@ -18,9 +20,18 @@ const WorksSlider: React.FC<WorksSliderProps> = ({ slides, caption1, caption2, s
       <div className={`${styles.container} worksSlider_container`}>
         <Image
           alt="thumbnail"
+          src={slides[0].toString()}
+          sizes="(max-width: 768px) 100vw, 758px"
+          width={width}
+          height={height}
+           className={styles.imageSizer}
+        />
+        <Image
+          alt="thumbnail"
           src={slides[sliderIndex].toString()}
           sizes="(max-width: 768px) 100vw, 758px"
           fill
+          className={styles.image}
         />
         <button
           className={styles.prev}

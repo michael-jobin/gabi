@@ -78,6 +78,8 @@ export interface GalleryItem {
   slides: SanityImageSource[]
   slideCaption1?: string[]
   slideCaption2?: string[]
+  width: number
+  height: number
  }
  galleryCustom?: string
 }

@@ -294,23 +294,31 @@ body {
 // ----------------------------------------
 // specific pages
 // ----------------------------------------
-#major-arcana-animaux-royaux-collection {
+// #major-arcana-animaux-royaux-collection {
+//   .worksSlider_container {
+//     height: 58rem;
+
+//     @media screen and (max-width: 768px) {
+//       height: 27rem;
+//     }
+//   }
+// }
+
+// #monsterpedia-mix-and-match-book-2nd-edition {
+//   .worksSlider_container {
+//     height: 60rem;
+
+//     @media screen and (max-width: 768px) {
+//       height: 27rem;
+//     }
+//   }
+// }
+
+#captain-billy-balance-adventure {
   .worksSlider_container {
-    height: 58rem;
-
-    @media screen and (max-width: 768px) {
-      height: 27rem;
-    }
-  }
-}
-
-#monsterpedia-mix-and-match-book-2nd-edition {
-  .worksSlider_container {
-    height: 60rem;
-
-    @media screen and (max-width: 768px) {
-      height: 27rem;
-    }
+    background-color: transparent;
+    border-radius: 0;
+    box-shadow: none;
   }
 }
 
