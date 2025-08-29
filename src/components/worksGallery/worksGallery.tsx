@@ -69,13 +69,20 @@ const WorksGallery: React.FC<WorksInfoProps> = ({ work }) => {
         }
 
         if (item.galleryType === 'slider' && item.slider) {
+
+            const firstSlide = item.slider.slides[0]
+            const firstSlideUrl = urlFor(firstSlide) || ''
+            const { width, height } = getImageDimensions(firstSlideUrl)
+
           return (
             <div key={index} className={styles.item}>
               <WorksSlider
                 slides={item.slider.slides.map((slide) => urlFor(slide) || '')}
                 caption1={item.slider.slideCaption1}
                 caption2={item.slider.slideCaption2}
-                slug={work.slug.current}
+                //slug={work.slug.current}
+                width={width}
+                height={height}
               />
             </div>
           )
